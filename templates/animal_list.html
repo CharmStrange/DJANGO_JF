@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>절지류 애호가들</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgba(203, 226, 230, 1), rgba(253, 226, 230, 0)); /* 투명 그라데이션 설정 */
+            color: #212529;
+            font-size: 20px;
+            padding: 50px;
+        }
+        .animal-list-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .search-form {
+            margin-bottom: 25px;
+        }
+        .animal-category-buttons {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .animal-category-buttons .btn {
+            width: 150px;
+            margin-right: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 20px; /* Added border radius for soft shape */
+        }
+        .animal-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .animal-list li {
+            margin-bottom: 10px;
+        }
+        .welcome-message {
+            font-weight: bold;
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .notice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #f8f9fa; /* Added zebra-like background color */
+            border: 1px solid #dee2e6; /* Added border */
+        }
+        .notice-table th,
+        .notice-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+        .notice-table th {
+            font-weight: bold;
+        }
+        .notice-table td {
+            background-color: #ffffff;
+        }
+        .community-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .community-buttons .btn {
+            width: 150px; /* Increased button size */
+            margin-right: 10px;
+            font-weight: bold;
+            color: #000000;
+            background-color: transparent;
+            border-color: #000000;
+            border-radius: 20px; /* Added border radius for soft shape */
+        }
+        .text-zebra {
+            background-color: #f8f9fa; /* Added zebra-like background color */
+            color: #212529; /* Adjusted font color */
+            padding: 5px; /* Adjusted padding */
+            border-radius: 5px; /* Added border radius for soft shape */
+            font-weight: bold;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="animal-list-container">
+        <h1 class="text-center mb-4 font-weight-bold" style="color: #8B4513;">절지류 애호가들</h1> <!-- Updated font color -->
+        
+        <form class="search-form" action="{% url 'animal_list' %}" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control rounded-pill" name="search" placeholder="검색"> <!-- Added rounded-pill class for soft shape -->
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary rounded-pill">검색</button> <!-- Added rounded-pill class for soft shape -->
+                </div>
+            </div>
+        </form>
+        
+        <hr>
+        
+        <div class="animal-category-buttons">
+            <div class="btn-group" role="group" aria-label="Animal Categories">
+                <button type="button" class="btn btn-primary rounded-pill">거미류</button>
+                <button type="button" class="btn btn-primary rounded-pill">전갈류</button>
+                <button type="button" class="btn btn-primary rounded-pill">지네류</button>
+                <button type="button" class="btn btn-primary rounded-pill">등각류 & 배각류</button>
+                <button type="button" class="btn btn-primary rounded-pill">기타</button>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <p class="welcome-message">환영해요!</p>
+        
+        <table class="notice-table">
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>공지 제목 1</td>
+                    <td>관리자</td>
+                    <td>2023-07-04</td>
+                </tr>
+                <tr>
+                    <td>공지 제목 2</td>
+                    <td>관리자</td>
+                    <td>2023-07-04</td>
+                </tr>
+                <tr>
+                    <td>공지 제목 3</td>
+                    <td>관리자</td>
+                    <td>2023-07-04</td>
+                </tr>
+                <!-- Add more rows for other notices -->
+            </tbody>
+        </table>
+        
+        <div class="community-buttons">
+            <a href="{% url 'bunyangso' %}" class="btn btn-light rounded-pill">분양소</a> <!-- Updated URL for '분양소' -->
+            <a href="{% url 'ipyangso' %}" class="btn btn-light rounded-pill">입양소</a> <!-- Updated URL for '입양소' -->
+            <a href="{% url 'dokam' %}" class="btn btn-light rounded-pill">도감</a> <!-- Updated URL for '도감' -->
+            <a href="{% url 'jarang' %}" class="btn btn-light rounded-pill">자랑글</a> <!-- Updated URL for '자랑글' -->
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
