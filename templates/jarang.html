@@ -6,18 +6,45 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background: linear-gradient(to bottom, rgba(203, 226, 230, 1), rgba(253, 226, 230, 0)); /* 투명 그라데이션 설정 */
+            background: #ffffff
             color: #212529;
             font-size: 20px;
             padding: 50px;
         }
+        .animal-category-buttons {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .animal-category-buttons .btn {
+            width: 150px;
+            margin-right: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 20px; /* Added border radius for soft shape */
+        }
     </style>
 </head>
 <body>
-    <h1>커뮤니티 페이지</h1>
+    <div class="text-center">
+        <h1>커뮤니티 페이지</h1>
+    </div>
     <!-- Display the animals here -->
-    {% for animal in animals %}
-        <p>{{ animal.name }}</p>
-    {% endfor %}
+    <div class="text-center">
+        {% for animal in animals %}
+            <p>{{ animal.name }}</p>
+        {% endfor %}
+    </div>    
+
+    <div class="animal-category-buttons text-center">
+        <div class="btn-group" role="group" aria-label="Animal Categories">
+            <button type="button" class="btn btn-primary rounded-pill">거미류</button>
+            <button type="button" class="btn btn-primary rounded-pill">전갈류</button>
+            <button type="button" class="btn btn-primary rounded-pill">지네류</button>
+            <button type="button" class="btn btn-primary rounded-pill">등각류 & 배각류</button>
+            <button type="button" class="btn btn-primary rounded-pill">기타</button>
+        </div>
+    </div>
+
 </body>
 </html>
